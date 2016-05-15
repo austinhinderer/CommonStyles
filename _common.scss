@@ -13,14 +13,14 @@ $copyColorSecondary: #AEB0B1;
 $linkColorPrimary: $primary;
 $linkColorPrimaryHover: darken($primary, 10%);
 
-@mixin carbon-fiber() {
+@mixin carbon-fiber($size: 4px) {
   background:
-    linear-gradient(27deg, #151515 4px, transparent 4px) 0 4px,
-    linear-gradient(207deg, #151515 4px, transparent 4px) 8px 0px,
-    linear-gradient(27deg, #222 4px, transparent 4px) 0px 8px,
-    linear-gradient(207deg, #222 4px, transparent 4px) 8px 4px,
-    linear-gradient(90deg, #1b1b1b 8px, transparent 8px),
+    linear-gradient(27deg, #151515 $size, transparent $size) 0 $size,
+    linear-gradient(207deg, #151515 $size, transparent $size) (2*$size) 0px,
+    linear-gradient(27deg, #222 $size, transparent $size) 0px (2*$size),
+    linear-gradient(207deg, #222 $size, transparent $size) (2*$size) $size,
+    linear-gradient(90deg, #1b1b1b (2*$size), transparent (2*$size)),
     linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-  background-size: 16px 16px;
+  background-size: (4*$size) (4*$size);
   background-color: #131313;
 }
